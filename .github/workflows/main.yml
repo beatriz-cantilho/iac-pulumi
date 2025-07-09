@@ -31,7 +31,7 @@ jobs:
 
       - name: Configure AWS Credentials
         id: configure-aws-credentials
-        uses: aws-actions/configure-was-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-region: ${{ secrets.AWS_REGION }}  
