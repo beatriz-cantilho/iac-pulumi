@@ -7,6 +7,13 @@ const bucket = new aws.s3.BucketV2("rocketseat-bucket-stg", {
     }
 });
 
+const devBucket = new aws.s3.BucketV2("rocketseat-bucket-dev", {
+    bucket: 'rocketseat-bucket-dev',
+    tags: {
+        IAC: "true"
+    }
+});
+
 const ecr = new aws.ecr.Repository("rocketseat-ecr", {
     name: "rocketseat-ecr",
     imageTagMutability: "IMMUTABLE",
@@ -16,6 +23,8 @@ const ecr = new aws.ecr.Repository("rocketseat-ecr", {
 });
 
 export const bucketName = bucket.id;
+export const devBucketName = devBucket.id;
+
 export const bucketInfo = bucket.bucket;
 export const bucketArn = bucket.arn;
 
